@@ -1,18 +1,7 @@
-import {Action, ActionStatus, ActionClass} from "./action";
+type spec = "serverlessOTP" | "defragDisk" ;
 
-module App.Spec {
-    
-    type spec = "serverlessOTP" | "defragDisk" ;
+let specAll = new Set();
+specAll.add(["defragDisk", "https://localhost:2020/recipes/defragDisk"]);
+specAll.add(["serverlessOTP", "https://localhost:2020/recipes/twilioOTP"]);
 
-    const specAll: Map<spec, string> = new Map([]);
-
-    const actionStep = new Action("https://localhost:2020/recipes/defragDisk");
-
-    specAll.set("defragDisk", "https://localhost:2020/recipes/defragDisk");
-    specAll.set("serverlessOTP", "https://localhost:2020/recipes/twilioOTP");
-
-    console.log(
-        //addSpecStep("serverless", "serverless")
-    );
-
-};
+console.log(specAll!);
